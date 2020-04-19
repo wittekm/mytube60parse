@@ -1,0 +1,1445 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>ragefest</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/public/javascripts/jquery.cookie.js"></script>
+
+		<style type="text/css">
+            #extratitle{
+                font-size:70%;
+            }
+
+
+			#errors{
+				color:#D1493B;
+				margin:10px;
+			}
+
+			a img {
+				border:none;
+			}
+
+			#errors li {
+				margin:0 0 6px 0;
+				list-style:none;
+			}
+
+			#captcha{
+				float:right;
+			}
+
+			#my-form{
+				margin:10px 0 15px 15px;
+				width:470px;
+			}
+
+			#my-form input {
+				background-color:#121212;
+				width:300px;
+				height:24px;
+				border:1px solid #37A075;
+				-moz-border-radius:5px;
+				border-radius: 5px;
+				color:white;
+				font-size:20px;
+				margin:0 0 15px 0;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+			#my-form textarea {
+				background-color:#121212;
+				width:400px;
+
+				height:300px;
+				border:1px solid #37A075;
+				-moz-border-radius:5px;
+				border-radius: 5px;
+				color:white;
+				font-size:15px;
+				margin:0 0 15px 0;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+			#head img a {
+				border:none;
+			}
+
+            img a{
+                border:none;
+            }
+
+
+			#my-form label {
+				display:block;
+				font-size:18px;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+			#my-form button{
+				font-size:20px;
+				display:block;
+				width:300px;
+				height:30px;
+			}
+
+			#buffer{
+				margin:10px;
+			}
+
+			body{
+				margin:0;
+				padding:0;
+				background-color:#121212;
+				background-repeat:repeat-x;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			a{
+				text-decoration:none;
+				color:#37A075;
+			}
+
+			a:hover {
+				color:white;
+			}
+
+			#content{
+				padding:10px 10px 10px 10px;
+				background-color:#151515;
+				margin:5px auto 20px auto;
+				border:1px solid #272727;
+				-moz-border-radius:10px;
+				border-radius: 10px;
+			}
+
+			#wrapper{
+				margin:0 auto 30px auto;
+				padding:0;
+				width:900px;
+			}
+
+			#inner-content{
+
+				background-color:#060606;
+				-moz-border-radius:10px;
+				border-radius: 10px;
+				color:white;
+				margin:1px 0 0 0;
+				padding:5px;
+			}
+
+			#headerDiv {
+				border-bottom-width: 1px;
+				border-bottom-style: solid;
+				border-bottom-color: rgb(39, 39, 39);
+				background: #060606;
+			}
+
+			h2{
+				color:white;
+				font-weight:500;
+				margin:5px 0 5px 0;
+				float:left;
+				Font-Family: "Courier New", Courier;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+            h3{
+            color:white;
+            font-weight:500;
+            margin:5px 0 5px 0;
+            Font-Family: "Courier New", Courier;
+            text-shadow: 0.15em 0.15em 0.15em black;
+            }
+
+			#more{
+				font-family: "Courier New", Courier;
+				text-align:center;
+				padding:3px;
+				text-shadow: 0.20em 0.20em 0.20em black;
+				font-size:1.2em;
+			}
+
+			#bottom-nav {
+				float:right;
+				margin:10px 0 5px 0;
+
+			}
+
+			#bottom-nav li{
+			   	font-family: "Courier New", Courier;
+				display:inline;
+				padding:5px 3px 5px 3px;
+				margin:0 5px 0 5px;
+				font-weight:500;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+			#bottom-nav a:hover {
+				color:white;
+			}
+
+			.clearfix{
+				clear:both;
+			}
+
+			#top-nav li{
+				display:inline;
+				margin:0 0 0 15px;
+			}
+
+			#top-nav {
+				float:right;
+				line-height:76px;
+				margin:0;
+			}
+
+			#top-nav a{
+				color:white;
+				text-shadow: 0.20em 0.20em 0.20em black;
+				font-family: "Courier New", Courier;
+			}
+
+			#top-nav a:hover{
+				color:#37A075;
+			}
+
+			#head img{
+				float:left;
+			}
+
+			#head a img{
+				border:none;
+			}
+			#foot{
+				margin:20px 0 0 0;
+				text-align:center;
+				color:white;
+				font-size:90%;
+				text-shadow: 0.20em 0.20em 0.20em black;
+			}
+
+			#search-rs{
+				margin:0;
+				padding:0;
+				list-style:none;
+			}
+
+			#search-rs li{
+				width:200px;
+				background-color:#121212;
+				-moz-border-radius:8px;
+				border-radius: 8px;
+				border:1px solid #272727;
+				float:left;
+				text-align:center;
+				padding:5px 0 0 0;
+				margin:10px 7px 5px 7px;
+				height:178px;
+			}
+
+			#search-rs p{
+				padding:0;
+				margin:2px 0 0 0;
+				font-size:0.8em;
+			}
+			.search-meta a {
+				text-shadow: 0.20em 0.20em 0.20em black;
+			}
+
+			#search-rs a img{
+				border:1px solid #272727;
+				clear:both;
+			}
+
+			#loading{
+				margin:10px 0 5px 0;
+				text-align:center;
+				display:none;
+			}
+
+			#loading img{
+				margin:0 10px 0 0;
+			}
+
+			#loading span {
+				position:relative;
+				top:-10px;
+				font-family: "Courier New", Courier;
+				font-weight:500;
+				text-shadow: 0.15em 0.15em 0.15em black;
+			}
+
+			#mini-search{
+				float:right;
+				position:relative;
+				top:3px;
+				margin:0 0 0 10px;
+			}
+
+			#mini-search input {
+				color:white;
+				background-color:#121212;
+				border:1px solid #272727;
+				font-size:18px;
+				margin:2px 5px 0 0;
+				width:210px;
+				padding:3px;
+				-moz-border-radius:3px;
+				border-radius:3px;
+				text-align:right;
+				text-shadow: 0.20em 0.20em 0.20em black;
+				font-family: "Courier New", Courier;
+			}
+
+
+            #the-top{
+            		background-color:#060606;
+                height:30px;
+                line-height:30px;
+								margin:0 auto 3px auto;
+								width:900px;
+            }
+
+
+            #the-top p {
+                margin:0;
+                padding:0;
+                font-size:10px;
+            }
+
+            #span-left a {
+                color:white;
+                padding:0;
+                margin:0 0 0 20px;
+            }
+
+            .red{
+            color:#A90000;
+            }
+
+						#span-ad {
+								float:left;
+						}
+
+            #span-right{
+                float:right;
+                margin:0 20px 0 0;
+								position: absolute;
+  							right: 0px;
+  							width: 300px;
+
+            }
+
+            #span-right img {
+                float:right;
+                margin:3px 5px 0 5px;
+            }
+		</style>
+		<link rel="stylesheet" href="/public/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="/public/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript">
+			var searchClicked = false;
+			$(document).ready(function(){
+				$('#mini-search').delegate('input', 'focus', function(){
+					if(!searchClicked){
+						searchClicked = true;
+						$(this).val('');
+					}
+				});
+			});
+		</script>
+		<script type="text/javascript">
+		/*
+	    $(document).ready(function() {
+					if($.cookie("tallypix_lightbox_1") != 'yes') {
+						$("#lightBoxImage").fancybox({
+				        onComplete: function () {
+				            $("#fancybox-img").wrap($("<a />", {
+				                // set anchor attributes
+				                href: "https://itunes.apple.com/US/app/id965561671?mt=8", //or your target link
+				                target: "_blank" // optional
+				            }));
+				        }
+				    }).trigger("click");
+						$.cookie("tallypix_lightbox_1", "yes");
+					}
+	    });
+			*/
+		</script>
+
+		<script type="text/javascript">
+
+		/*
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-v1.4.1.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"init data setIdentity logout track link sendSMS referrals credits redeem banner closeBanner".split(" "),0);
+
+    branch.init('key_live_ifpCQYj37NwQYRfZ5cBqQhbkCxh9dlSI', function(err, data) {
+        // callback to handle err or data
+    });
+
+		branch.banner({
+		    icon: 'https://s3.amazonaws.com/mytube60-ios/small_logo.png',
+		    title: 'MyTube60',
+		    description: 'Watch Power Hours on your iPhone!',
+		    openAppButtonText: 'Open',         // Text to show on button if the user has the app installed
+		    downloadAppButtonText: 'Download', // Text to show on button if the user does not have the app installed
+		    phonePreviewText: '+44 9999-9999', // The default phone placeholder is a US format number, localize the placeholder number with a custom placeholder with this option
+		    iframe: true,                      // Show banner in an iframe, recomended to isolate Branch banner CSS
+		    showiOS: true,                     // Should the banner be shown on iOS devices?
+		    showDesktop: true,                 // Should the banner be shown on desktop devices?
+		    disableHide: false,                // Should the user have the ability to hide the banner? (show's X on left side)
+		    forgetHide: false,                 // Should we remember or forget whether the user hid the banner?
+		    make_new_link: false               // Should the banner create a new link, even if a link already exists?
+			}, { });
+			*/
+		</script>
+
+		
+<link rel="stylesheet" type="text/css" media="screen" href="/public/stylesheets/jquery.horizontal.scroll.css" />
+<link rel="stylesheet" href="/public/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/public/javascripts/jquery.horizontal.scroll.js"></script>
+<script type="text/javascript" src="/public/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<style type="text/css">
+	#nav-title{
+		margin:5px 0 5px 10px;
+		text-shadow: 0.25em 0.25em 0.25em black;
+		padding:10px 0 0 0;
+		text-align:left;
+	}
+
+	#video-nav li{
+		display:inline;
+		margin:0 3px 0 3px;
+		padding:0 0 0 0;
+		float:left;
+	}
+
+
+	.video-thumb {
+		border:2px solid #37A075;
+		-moz-border-radius:4px;
+		border-radius: 4px;
+	}
+
+	#video-nav li a:hover img, #curr-playing {
+		border:2px solid white;
+		-moz-border-radius:4px;
+		border-radius: 4px;
+	}
+
+
+	#video-nav ul{
+		margin:5px 10px 0 10px;
+		padding:0;
+	}
+
+	#now-playing{
+		background-color:#121212;
+		float:left;
+		padding:5px;
+		-moz-border-radius:7px;
+		border-radius: 7px;
+		border:1px solid #37A075;
+		margin:0px 10px 30px 5px;
+	}
+
+	#now-playing img{
+		border:2px solid white;
+		-moz-border-radius:4px;
+		border-radius:4px;
+		padding:2px 5px 0 5px;
+	}
+
+	#now-playing span{
+		color:white;
+		display:block;
+		text-align:center;
+		text-shadow: 0.25em 0.25em 0.25em black;
+		margin:5px 0 5px 0;
+	}
+
+	#ytapiplayer{
+		padding:2px;
+		background-color:#37A075;
+		-moz-border-radius:5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 7px 7px 7px black;
+		width:480px;
+		margin:10px 0 0 0px;
+		color:black;
+        float:left;
+	}
+
+    #ad-area{
+        float:left;
+        margin:10px 0 10px 20px;
+        -moz-border-radius:5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 7px 7px 7px black;
+        border:2px solid white;
+        background-color:#121212;
+        width:300px;
+        height:250px;
+    }
+
+    #spot-area{
+        float:left;
+        width:335px;
+        margin:10px 0 0 20px;
+        height:80px;
+        background-color:white;
+        -moz-border-radius:5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 7px 7px 7px black;
+        border:2px solid white;
+        padding:3px;
+        background-color:#121212;
+    }
+
+	#like{
+		width:75%;
+		float:left;
+	}
+
+	#qual{
+		width:25%;
+		float:left;
+	}
+
+	#my-meta{
+		border:1px solid #272727;
+		background-color:#151515;
+		-moz-border-radius:10px;
+		border-radius: 10px;
+		padding:10px 10px 10px 10px;
+		width:90%;
+		margin:10px auto 10px auto;
+	}
+
+	.tweet-btn{
+		margin:10px 0 0 0;
+		paddind:0;
+	}
+
+    #spot-area p {
+        padding:3px;
+        margin:0;
+        font-size:0.9em;
+    }
+
+    #spot-area a {
+        color:white;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+
+	function onYouTubeIframeAPIReady(playerId) {
+		//ytplayer = document.getElementById("myytplayer");
+		//swfobject.embedSWF("http://www.youtube.com/v/" + playList[0].videoId + "?enablejsapi=1&playerapiid=ytplayer&fs=1", "video-content", "480", "370", "8", null, null, params, atts);
+
+	  ytplayer = new YT.Player('video-content', {
+          height: 379,
+          width: 480,
+          videoId: playList[0].videoId,
+		  playerVars: { 'autoplay': 0, 'controls': 1 },
+          events: {
+            'onError': onytplayerError,
+            'onStateChange': onStateChange,
+			'onReady':  onPlayerReady
+          }
+        });
+	}
+
+  function onPlayerReady(event) {
+		monitor = function(){
+			if(currentIndex == -1){
+				startItUp();
+			}
+			if(ytplayer.getPlayerState() == 1){
+				if(ytplayer.getCurrentTime() > playList[currentIndex].end || (ytplayer.getCurrentTime() > ytplayer.getDuration() - .5 && ytplayer.getDuration() != 0)){
+					if(ytplayer.getPlayerState() == 1){
+						startItUp();
+					}
+				}
+			}
+		}
+		monitor.call();
+		var repeat = setInterval(monitor, 250);  
+	}
+
+	status = "na";
+
+    var once = true;
+	function onStateChange(state){
+		if(state == 2 && status == "errorhandle"){
+			ytplayer.playVideo();
+			status = "na";
+		}
+        if(state == 1){
+            if(once){
+                once = false;
+                if('no' == "yes"){
+                    ytplayer.pauseVideo();
+                    $.fancybox({
+                        href: '/generic/share?id=8p37l8di1amavaq&slug=ragefest',
+                        width: 450,
+                        height: 275,
+                        type : 'iframe',
+                        onClosed: function() {
+                            ytplayer.playVideo();
+                        }
+                    });
+                }
+            }
+        }
+	}
+
+	function onytplayerError(error){
+		$.get('/generic/investigate', { videoId : playList[currentIndex].videoId }, function(data){});
+		status = "errorhandle";
+		setTimeout(function(){
+			startItUp();
+		}, 4000);
+
+	}
+
+	function handleChange(item, index){
+		$('#now-playing img').attr('src', 'http://img.youtube.com/vi/' + item.videoId + '/1.jpg');
+		if(!isHover){
+			var title = currentIndex + 1 + '/' + playList.length + ': ' + playList[currentIndex].title;
+			$('#nav-title').html(title);
+		}
+        var songRef =  spotRefs[playList[currentIndex].videoId];
+        if(songRef != undefined){
+            //$('#spot-artists').html(songRef.artists.join('/') + ' - ');
+            //$('#spot-song').html(songRef.title + ' on Spotify');
+            var ids = songRef.spotifyId.split(':');
+            //$('#spot-href').attr('href', 'http://open.spotify.com/track/' + ids[ids.length - 1]);
+        }
+
+	}
+
+
+
+
+	function startItUp(){
+		currentIndex++;
+		if(playList.length > currentIndex){
+			ytplayer.loadVideoById(playList[currentIndex].videoId, playList[currentIndex].start);
+			handleChange(playList[currentIndex], currentIndex);
+
+		}
+		else{
+			status = "na";
+			ytplayer.pauseVideo();
+		}
+	}
+
+	currentIndex = -1;
+
+	$(document).ready(function(){
+        spotRefs = {};
+		playList = [];
+		
+			playList.push({ videoId : '5yt849wJyVk', start : 104.621, end : 164.62099999999998, title : 'Ludacris - Get Back' });
+		
+			playList.push({ videoId : '3OnnDqH6Wj8', start : 74.834, end : 134.834, title : 'Flo Rida - Good Feeling [Official Video]' });
+		
+			playList.push({ videoId : 'gG_dA32oH44', start : 76.34599999999999, end : 136.346, title : 'Jay-Z & Kanye West - Ni**as In Paris (Explicit)' });
+		
+			playList.push({ videoId : 'Oai1V7kaFBk', start : 132.035, end : 192.035, title : 'Sisqo - Thong Song' });
+		
+			playList.push({ videoId : '2cXDgFwE13g', start : 83.09074345549739, end : 143.09074345549737, title : 'First Of The Year (Equinox) - Skrillex [OFFICIAL]' });
+		
+			playList.push({ videoId : 'SUONl2RPDmM', start : 81.019, end : 141.019, title : 'Martin Solveig & Dragonette - Hello [OFFICIAL VIDEO HD]' });
+		
+			playList.push({ videoId : 'aCyGvGEtOwc', start : 35.213, end : 95.213, title : 'Paramore: Misery Business [OFFICIAL VIDEO]' });
+		
+			playList.push({ videoId : '1OjTspCqvk8', start : 94.97200000000001, end : 154.972, title : 'The White Stripes - Icky Thump' });
+		
+			playList.push({ videoId : 'bJkymylTNU4', start : 55.346000000000004, end : 115.346, title : 'MATT AND KIM - \"LESSONS LEARNED\" (OFFICIAL MUSIC VIDEO)' });
+		
+			playList.push({ videoId : '4iPINFbs9KE', start : 69.10900000000001, end : 129.109, title : 'Mike Jones - Mr. Jones [OFFICIAL VIDEO]' });
+		
+			playList.push({ videoId : 'QK8mJJJvaes', start : 72.249, end : 132.249, title : 'MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ (OFFICIAL VIDEO)' });
+		
+			playList.push({ videoId : 'cDIzMGh94vo', start : 63.769999999999996, end : 123.77, title : '(If You\'re Wondering If I Want You To) I Want You To' });
+		
+			playList.push({ videoId : 'fVyVIsvQoaE', start : 54.345, end : 114.345, title : 'OutKast - BOB' });
+		
+			playList.push({ videoId : 'JU9TouRnO84', start : 36.061, end : 96.061, title : 'Rick Ross - Hustlin\'' });
+		
+			playList.push({ videoId : 'L_jWHffIx5E', start : 57.817, end : 117.81700000000001, title : 'Smash Mouth - All Star' });
+		
+			playList.push({ videoId : 'WfGtB6K8q8k', start : 33.785000000000004, end : 93.785, title : 'Sleigh Bells - Infinity Guitars' });
+		
+			playList.push({ videoId : 'L4MzF53je5M', start : 66.635, end : 126.635, title : 'AWOLNATION - Kill Your Heroes (Official)' });
+		
+			playList.push({ videoId : '4BJDNw7o6so', start : 59.119, end : 119.119, title : 'Phoenix - Lisztomania Official Video (Best Quality + Lyrics)' });
+		
+			playList.push({ videoId : 'wCDIYvFmgW8', start : 46.753, end : 106.753, title : 'Fatboy Slim - Weapon Of Choice [Official video]' });
+		
+			playList.push({ videoId : '5bfseWNmlds', start : 49.759, end : 109.759, title : 'Passion Pit - Sleepyhead' });
+		
+			playList.push({ videoId : '1QP-SIW6iKY', start : 117.06599999999999, end : 177.06599999999997, title : 'Enter Sandman - Metallica' });
+		
+			playList.push({ videoId : 'TOypSnKFHrE', start : 0.0, end : 60.0, title : 'The Strokes - Last Nite' });
+		
+			playList.push({ videoId : 'PsO6ZnUZI0g', start : 39.374, end : 99.374, title : 'Kanye West - Stronger' });
+		
+			playList.push({ videoId : 'EvuL5jyCHOw', start : 50.085, end : 110.08500000000001, title : 'Lenny Kravitz - Fly Away' });
+		
+			playList.push({ videoId : 'hTWKbfoikeg', start : 57.732, end : 117.732, title : 'Nirvana - Smells Like Teen Spirit' });
+		
+			playList.push({ videoId : 'a2BUEzdjfpY', start : 55.466, end : 115.46600000000001, title : '\'WHIRRING\' THE JOY FORMIDABLE [OFFICIAL VIDEO]' });
+		
+			playList.push({ videoId : 'pK7egZaT3hs', start : 24.536, end : 84.536, title : 'Arctic Monkeys - I Bet You Look Good On The Dance Floor (2005)' });
+		
+			playList.push({ videoId : 'XNtTEibFvlQ', start : 34.536, end : 94.536, title : 'LMFAO - Shots ft. Lil Jon' });
+		
+			playList.push({ videoId : 'qL1B_r9nC9k', start : 14.98, end : 74.98, title : 'Childish Gambino - Bonfire' });
+		
+			playList.push({ videoId : 'ThlhSnRk21E', start : 16.648, end : 76.648, title : 'DMX - Ruff Ryders\' Anthem' });
+		
+			playList.push({ videoId : 'PQHPYelqr0E', start : 43.074, end : 103.074, title : 'Weezer - Pork And Beans' });
+		
+			playList.push({ videoId : 'dTAAsCNK7RA', start : 12.643, end : 72.643, title : 'OK Go - Here It Goes Again' });
+		
+			playList.push({ videoId : '-MrQtOoQRpc', start : 52.992, end : 112.99199999999999, title : 'NWA - Straight Outta Compton [Explicit] [HD]' });
+		
+			playList.push({ videoId : 'mdB3Oyd5HtU', start : 17.257, end : 77.257, title : '3OH!3 - DON\'T TRUST ME [OFFICIAL MUSIC VIDEO]' });
+		
+			playList.push({ videoId : 'Wa5B22KAkEk', start : 68.657, end : 128.65699999999998, title : 'Snoop Dogg & Wiz Khalifa - Young, Wild and Free ft. Bruno Mars [Official Video]' });
+		
+			playList.push({ videoId : 'Rmp6zIr5y4U', start : 14.811, end : 74.811, title : 'Lupe Fiasco - The Show Goes On' });
+		
+			playList.push({ videoId : 'avaSdC0QOUM', start : 26.065, end : 86.065, title : 'I\'m On A Boat (Explicit Version)' });
+		
+			playList.push({ videoId : 'HLUX0y4EptA', start : 14.968, end : 74.968, title : 'Flobots - Handlebars' });
+		
+			playList.push({ videoId : 'boGyFAYomBo', start : 25.717, end : 85.717, title : 'Wildlife Control - Analog or Digital' });
+		
+			playList.push({ videoId : 'SBjQ9tuuTJQ', start : 68.255, end : 128.255, title : 'Foo Fighters - The Pretender' });
+		
+			playList.push({ videoId : 'm4cgLL8JaVI', start : 47.217, end : 107.217, title : 'Daft Punk - Derezzed (from TRON: Legacy)' });
+		
+			playList.push({ videoId : 'z5rRZdiu1UE', start : 2.33, end : 62.33, title : 'Beastie Boys - Sabotage' });
+		
+			playList.push({ videoId : 'llDikI2hTtk', start : 35.499, end : 95.499, title : 'Nero - Promises' });
+		
+			playList.push({ videoId : 'zfwsxoo_FL8', start : 6.851, end : 66.851, title : 'Goldfinger - Superman' });
+		
+			playList.push({ videoId : '0YuSg4mts9E', start : 23.574, end : 83.574, title : 'The Naked And Famous - Young Blood' });
+		
+			playList.push({ videoId : 'SgM3r8xKfGE', start : 20.502, end : 80.502, title : 'Flo Rida - Club Can\'t Handle Me ft. David Guetta [Official Music Video] - Step Up 3D' });
+		
+			playList.push({ videoId : 'dX3k_QDnzHE', start : 1.337, end : 61.337, title : 'M83 \'Midnight City\' Official video' });
+		
+			playList.push({ videoId : 'VLhZ52vVK-I', start : 13.36, end : 73.36, title : 'BoB - Haterz Everywhere [Feat. Rich Boy] (video)' });
+		
+			playList.push({ videoId : '78_loMbmKJ8', start : 4.985, end : 64.985, title : 'Earl Sweatshirt - EARL' });
+		
+			playList.push({ videoId : '17ozSeGw-fY', start : 57.212, end : 117.212, title : 'Calvin Harris - Sweet Nothing ft. Florence Welch' });
+		
+			playList.push({ videoId : 'aZglqkCRNt8', start : 3.386, end : 63.386, title : 'Cali Swag District - Teach Me How To Dougie (Official Video)' });
+		
+			playList.push({ videoId : 'a_426RiwST8', start : 14.604, end : 74.604, title : 'The Black Keys - Lonely Boy (First Listen)' });
+		
+			playList.push({ videoId : 'X5G9tIe84lE', start : 84.201, end : 144.201, title : 'Neon Trees - Everybody Talks' });
+		
+			playList.push({ videoId : 'fWNaR-rxAic', start : 45.115, end : 105.11500000000001, title : 'Carly Rae Jepsen - Call Me Maybe' });
+		
+			playList.push({ videoId : '2ddd70PMxTE', start : 102.606, end : 162.606, title : 'GROUPLOVE \'Colours\' [OFFICIAL VIDEO]' });
+		
+			playList.push({ videoId : 'sy1dYFGkPUE', start : 1.526, end : 61.526, title : 'Justice - DANCE (Official Video)' });
+		
+			playList.push({ videoId : 'pc0mxOXbWIU', start : 31.325, end : 91.325, title : 'Cee Lo Green - FUCK YOU (Official Video)' });
+		
+			playList.push({ videoId : '04854XqcfCY', start : 29.936, end : 89.936, title : 'Queen - \'We Are The Champions\'' });
+		
+
+        
+            var artists = [];
+            
+                artists.push('Ludacris');
+
+            
+            spotRefs['5yt849wJyVk'] = { title : 'Get Back', artists : artists, spotifyId : 'spotify:track:6kSmlGqTteoAGuGGgClf6W' };
+        
+            var artists = [];
+            
+                artists.push('Flo Rida');
+
+            
+            spotRefs['3OnnDqH6Wj8'] = { title : 'Good Feeling', artists : artists, spotifyId : 'spotify:track:3NcO4jGK1Opb5ea0mYLpxb' };
+        
+            var artists = [];
+            
+                artists.push('Jay Z');
+
+            
+                artists.push('Kanye West');
+
+            
+            spotRefs['gG_dA32oH44'] = { title : 'Ni**as in Paris', artists : artists, spotifyId : 'spotify:track:2Zb7wnGUnNPCas2E0wWSQ5' };
+        
+            var artists = [];
+            
+                artists.push('Sisqo');
+
+            
+            spotRefs['Oai1V7kaFBk'] = { title : 'Thong Song', artists : artists, spotifyId : 'spotify:track:5Mmk2ii6laakqfeCT7OnVD' };
+        
+            var artists = [];
+            
+                artists.push('Skrillex');
+
+            
+            spotRefs['2cXDgFwE13g'] = { title : 'First Of The Year - Equinox', artists : artists, spotifyId : 'spotify:track:5i7fZq3chLyCHo3VeB6goD' };
+        
+            var artists = [];
+            
+                artists.push('Martin Solveig');
+
+            
+            spotRefs['SUONl2RPDmM'] = { title : 'Hello featuring Dragonette', artists : artists, spotifyId : 'spotify:track:54fyVsVauzPwruLvGnBe3i' };
+        
+            var artists = [];
+            
+                artists.push('Paramore');
+
+            
+            spotRefs['aCyGvGEtOwc'] = { title : 'Misery Business', artists : artists, spotifyId : 'spotify:track:6SpLc7EXZIPpy0sVko0aoU' };
+        
+            var artists = [];
+            
+                artists.push('The White Stripes');
+
+            
+            spotRefs['1OjTspCqvk8'] = { title : 'Icky Thump', artists : artists, spotifyId : 'spotify:track:6urjT2UUnX83D8CDOPfux3' };
+        
+            var artists = [];
+            
+                artists.push('Matt & Kim');
+
+            
+            spotRefs['bJkymylTNU4'] = { title : 'Lessons Learned', artists : artists, spotifyId : 'spotify:track:2ydVbAfI1x4HNdxCpBZzkQ' };
+        
+            var artists = [];
+            
+                artists.push('Mike Jones');
+
+            
+            spotRefs['4iPINFbs9KE'] = { title : 'Mr. Jones - Explicit Version', artists : artists, spotifyId : 'spotify:track:3LU66Soe9kT5saRxI4wTj6' };
+        
+            var artists = [];
+            
+                artists.push('Weezer');
+
+            
+            spotRefs['cDIzMGh94vo'] = { title : '(If You\'re Wondering If I Want You To) I Want You To', artists : artists, spotifyId : 'spotify:track:4tWewq54FvRY9drV6DSlIU' };
+        
+            var artists = [];
+            
+                artists.push('OutKast');
+
+            
+            spotRefs['fVyVIsvQoaE'] = { title : 'B.O.B.', artists : artists, spotifyId : 'spotify:track:3WibbMr6canxRJXhNtAvLU' };
+        
+            var artists = [];
+            
+                artists.push('Rick Ross');
+
+            
+            spotRefs['JU9TouRnO84'] = { title : 'Hustlin\'', artists : artists, spotifyId : 'spotify:track:5Nc9xNlB70aD5DltYd3eoa' };
+        
+            var artists = [];
+            
+                artists.push('Smash Mouth');
+
+            
+            spotRefs['L_jWHffIx5E'] = { title : 'All Star', artists : artists, spotifyId : 'spotify:track:2NOcrOzPnXTTPE4zY3BSh5' };
+        
+            var artists = [];
+            
+                artists.push('Sleigh Bells');
+
+            
+            spotRefs['WfGtB6K8q8k'] = { title : 'Infinity Guitars', artists : artists, spotifyId : 'spotify:track:3m8i9k7CT6Fq8eAUGlfN7p' };
+        
+            var artists = [];
+            
+                artists.push('AWOLNATION');
+
+            
+            spotRefs['L4MzF53je5M'] = { title : 'Kill Your Heroes', artists : artists, spotifyId : 'spotify:track:7LJF6AtijSniUJpmZTqKRj' };
+        
+            var artists = [];
+            
+                artists.push('Passion Pit');
+
+            
+            spotRefs['5bfseWNmlds'] = { title : 'Sleepyhead', artists : artists, spotifyId : 'spotify:track:3ZUMC5OazTA8QtLpdlPdz9' };
+        
+            var artists = [];
+            
+                artists.push('Metallica');
+
+            
+            spotRefs['1QP-SIW6iKY'] = { title : 'Enter Sandman', artists : artists, spotifyId : 'spotify:track:5zinAGcI5aZ63vmqIrUXkj' };
+        
+            var artists = [];
+            
+                artists.push('The Strokes');
+
+            
+            spotRefs['TOypSnKFHrE'] = { title : 'Last Nite', artists : artists, spotifyId : 'spotify:track:7kzKAuUzOITUauHAhoMoxA' };
+        
+            var artists = [];
+            
+                artists.push('Kanye West');
+
+            
+            spotRefs['PsO6ZnUZI0g'] = { title : 'Stronger', artists : artists, spotifyId : 'spotify:track:24H5KPBdSvHQMRXTp12K3J' };
+        
+            var artists = [];
+            
+                artists.push('Lenny Kravitz');
+
+            
+            spotRefs['EvuL5jyCHOw'] = { title : 'Fly Away', artists : artists, spotifyId : 'spotify:track:0n0eMsX7WgEtc7dlscbuKU' };
+        
+            var artists = [];
+            
+                artists.push('Nirvana');
+
+            
+            spotRefs['hTWKbfoikeg'] = { title : 'Smells Like Teen Spirit', artists : artists, spotifyId : 'spotify:track:4hy4fb5D1KL50b3sng9cjw' };
+        
+            var artists = [];
+            
+                artists.push('The Joy Formidable');
+
+            
+            spotRefs['a2BUEzdjfpY'] = { title : 'Whirring', artists : artists, spotifyId : 'spotify:track:2XbqxKjCnE9YWfPRqwgtPq' };
+        
+            var artists = [];
+            
+                artists.push('Arctic Monkeys');
+
+            
+            spotRefs['pK7egZaT3hs'] = { title : 'I Bet You Look Good On The Dancefloor', artists : artists, spotifyId : 'spotify:track:5U2OpjVE3r64Nm8tyR2T9S' };
+        
+            var artists = [];
+            
+                artists.push('LMFAO');
+
+            
+                artists.push('Lil Jon');
+
+            
+            spotRefs['XNtTEibFvlQ'] = { title : 'Shots', artists : artists, spotifyId : 'spotify:track:0p0KHvE29x9LoOsCbs25HD' };
+        
+            var artists = [];
+            
+                artists.push('Childish Gambino');
+
+            
+            spotRefs['qL1B_r9nC9k'] = { title : 'Bonfire', artists : artists, spotifyId : 'spotify:track:35hvMJGbUtnKTj9GHvlR5d' };
+        
+            var artists = [];
+            
+                artists.push('DMX');
+
+            
+            spotRefs['ThlhSnRk21E'] = { title : 'Ruff Ryders\' Anthem', artists : artists, spotifyId : 'spotify:track:32SFvZODywPBVDYSYtqxCj' };
+        
+            var artists = [];
+            
+                artists.push('Weezer');
+
+            
+            spotRefs['PQHPYelqr0E'] = { title : 'Pork And Beans', artists : artists, spotifyId : 'spotify:track:1iYJ7LzmVg5SMlsA6er8HD' };
+        
+            var artists = [];
+            
+                artists.push('OK Go');
+
+            
+            spotRefs['dTAAsCNK7RA'] = { title : 'Here It Goes Again', artists : artists, spotifyId : 'spotify:track:1pHP4JeQV9wDx87D6qH9hD' };
+        
+            var artists = [];
+            
+                artists.push('Summer Hit Superstars');
+
+            
+            spotRefs['mdB3Oyd5HtU'] = { title : 'Don\'t Trust Me (Made Famous by 3OH!3)', artists : artists, spotifyId : 'spotify:track:3oinBIAAVsQt4EyytBlJ96' };
+        
+            var artists = [];
+            
+                artists.push('Snoop Dogg & Wiz Khalifa');
+
+            
+            spotRefs['Wa5B22KAkEk'] = { title : 'Young, Wild & Free - feat. Bruno Mars', artists : artists, spotifyId : 'spotify:track:2g7uRZ68eLtv74XrxgdT2q' };
+        
+            var artists = [];
+            
+                artists.push('Lupe Fiasco');
+
+            
+            spotRefs['Rmp6zIr5y4U'] = { title : 'The Show Goes On', artists : artists, spotifyId : 'spotify:track:5Zn66o8UqjE1e5CtOtM3co' };
+        
+            var artists = [];
+            
+                artists.push('The Lonely Island');
+
+            
+                artists.push('T-Pain');
+
+            
+            spotRefs['avaSdC0QOUM'] = { title : 'I\'m On A Boat', artists : artists, spotifyId : 'spotify:track:6J1NDncyE32ESFN45kGQU0' };
+        
+            var artists = [];
+            
+                artists.push('Flobots');
+
+            
+            spotRefs['HLUX0y4EptA'] = { title : 'Handlebars', artists : artists, spotifyId : 'spotify:track:4IdIs1ugvlGHzQ8JCq1UBl' };
+        
+            var artists = [];
+            
+                artists.push('Wildlife Control');
+
+            
+            spotRefs['boGyFAYomBo'] = { title : 'Analog or Digital', artists : artists, spotifyId : 'spotify:track:0JVk9qBHsQHEVtr3qqxiYW' };
+        
+            var artists = [];
+            
+                artists.push('Foo Fighters');
+
+            
+            spotRefs['SBjQ9tuuTJQ'] = { title : 'The Pretender', artists : artists, spotifyId : 'spotify:track:3ZsjgLDSvusBgxGWrTAVto' };
+        
+            var artists = [];
+            
+                artists.push('Beastie Boys');
+
+            
+            spotRefs['z5rRZdiu1UE'] = { title : 'Sabotage', artists : artists, spotifyId : 'spotify:track:7zLZFcyX6jN6YX7KFRzZf3' };
+        
+            var artists = [];
+            
+                artists.push('Nero');
+
+            
+            spotRefs['llDikI2hTtk'] = { title : 'Promises', artists : artists, spotifyId : 'spotify:track:1kjvBYbo5SgzDVn42c1SuF' };
+        
+            var artists = [];
+            
+                artists.push('Goldfinger');
+
+            
+            spotRefs['zfwsxoo_FL8'] = { title : 'Superman', artists : artists, spotifyId : 'spotify:track:6cL7NCFSvqWrBH5r4mkvVV' };
+        
+            var artists = [];
+            
+                artists.push('The Naked And Famous');
+
+            
+            spotRefs['0YuSg4mts9E'] = { title : 'Young Blood', artists : artists, spotifyId : 'spotify:track:25nzKGDiua1lE9Qo5V19GL' };
+        
+            var artists = [];
+            
+                artists.push('Flo Rida');
+
+            
+            spotRefs['SgM3r8xKfGE'] = { title : 'Club Can\'t Handle Me - Feat. David Guetta', artists : artists, spotifyId : 'spotify:track:66h8D2TWfiF341U0m7WWC9' };
+        
+            var artists = [];
+            
+                artists.push('M83');
+
+            
+            spotRefs['dX3k_QDnzHE'] = { title : 'Midnight City', artists : artists, spotifyId : 'spotify:track:4kO7mrAPfqIrsKwUOK5BFx' };
+        
+            var artists = [];
+            
+                artists.push('Big Hits 2012');
+
+            
+            spotRefs['17ozSeGw-fY'] = { title : 'Sweet Nothing', artists : artists, spotifyId : 'spotify:track:72pafrUp1G4NRfO10MxCgX' };
+        
+            var artists = [];
+            
+                artists.push('Cali Swag District');
+
+            
+            spotRefs['aZglqkCRNt8'] = { title : 'Teach Me How To Dougie', artists : artists, spotifyId : 'spotify:track:1yJ6tI74mgdRlyfMigZ9my' };
+        
+            var artists = [];
+            
+                artists.push('Neon Trees');
+
+            
+            spotRefs['X5G9tIe84lE'] = { title : 'Everybody Talks', artists : artists, spotifyId : 'spotify:track:5JGxJFdgOQdJZdmyEzDtTj' };
+        
+            var artists = [];
+            
+                artists.push('Carly Rae Jepsen');
+
+            
+            spotRefs['fWNaR-rxAic'] = { title : 'Call Me Maybe', artists : artists, spotifyId : 'spotify:track:5unfeZUhKhICP73CDYBW4N' };
+        
+            var artists = [];
+            
+                artists.push('Grouplove');
+
+            
+            spotRefs['2ddd70PMxTE'] = { title : 'Colours', artists : artists, spotifyId : 'spotify:track:37McwOy3miqBP2NyXMmT5w' };
+        
+            var artists = [];
+            
+                artists.push('Justice');
+
+            
+            spotRefs['sy1dYFGkPUE'] = { title : 'D.A.N.C.E.', artists : artists, spotifyId : 'spotify:track:0MYTcPXAAmeKBUpBgtAV0J' };
+        
+            var artists = [];
+            
+                artists.push('Cee Lo Green');
+
+            
+            spotRefs['pc0mxOXbWIU'] = { title : 'Fuck You', artists : artists, spotifyId : 'spotify:track:0Gs5cYR52PDgZ8r8PQYxil' };
+        
+            var artists = [];
+            
+                artists.push('Queen');
+
+            
+            spotRefs['04854XqcfCY'] = { title : 'We Are The Champions', artists : artists, spotifyId : 'spotify:track:5Y55FgnTswJip7H7HfCOpa' };
+        
+
+
+		var nav = '';
+		for(var i = 0; i < playList.length; i++){
+			nav += '<li><a id="v' + i + '" href="#"><img class="video-thumb" width="120" height="90" src="http://img.youtube.com/vi/'  +  playList[i].videoId + '/1.jpg" /></a></li>';
+		}
+		$('#horiz_container').html(nav);
+
+		var singleWidth = $('#horiz_container li').width();
+		$('#horiz_container').width((singleWidth + 6.5) * playList.length);
+		$('#horiz_container_outer').horizontalScroll();
+
+		var params = { allowScriptAccess : "always",  allowFullScreen : "true", wmode : "opaque" };
+		var atts = { id : "myytplayer" };
+		//swfobject.embedSWF("http://www.youtube.com/v/" + playList[0].videoId + "?enablejsapi=1&playerapiid=ytplayer&fs=1", "video-content", "480", "370", "8", null, null, params, atts);
+
+		var tag = document.createElement('script');
+      	tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+      	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+		$('#nav-area li').delegate('a', 'click', function(e) {
+			var index = $('#nav-area li a').index($(this));
+			currentIndex = index - 1;
+			startItUp();
+			return false;
+		});
+
+		isHover = false;
+
+		$('body').delegate('#vquality', 'change', function(){
+			var qual = $("#vquality option:selected").val();
+			ytplayer.setPlaybackQuality(qual);
+
+		});
+		$('#horiz_container li').delegate('a', 'hover', function(e) {
+			if(e.type == 'mouseenter'){
+				var index = $('#horiz_container li a').index($(this));
+				$('#nav-title').html(playList[index].title);
+				isHover = true;
+			}
+			else{
+				var indexCount = Math.min(currentIndex + 1, playList.length - 1);
+				var playListTotalCount = playList.length - 1;
+				$('#nav-title').html(indexCount + '/' + playListTotalCount + ': ' + playList[currentIndex].title);
+				isHover = false;
+			}
+		});
+	});
+</script>
+
+
+	</head>
+	<body>
+		<div id="headerDiv">
+			<div id="the-top">
+			    <span id="span-right"><a href="http://www.facebook.com/mytube60"><img width="25" height="25" src="/public/images/facebook_alt.png" /></a> <a href="https://twitter.com/#!/mytube60"><img width="25" height="25" src="/public/images/twitter_alt.png" /></a></span>
+	    </div>
+		</div>
+		
+		<div id="wrapper">
+			<div id="head">
+				<a href="/"><img src="/public/images/mytube60logo.png" /></a>
+				<ul id="top-nav">
+                    <li><a href="/blog-list.html">Blog</a></li>
+					
+						<li><a href="/login.html">Login</a></li>
+						<li><a href="/register.html">Register and Create</a></li>
+					
+					<li> <a href="/contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+			<div id="content">
+
+			<h2>ragefest </h2>
+				<div id="mini-search"><form action="/generic/search"><input name="q" value="Search!" type="text" /></form></div>
+
+				
+				<div class="clearfix"></div>
+				<div id="inner-content">
+<a id="hidden_link" href="#"></a>
+<div id="ytapiplayer">
+	<div id="video-content">You need Flash player 8+ and JavaScript enabled to view this video.</div>
+</div>
+<div id="ad-area">
+    <iframe src="http://rcm.amazon.com/e/cm?t=mytu0b-20&o=1&p=12&l=ur1&category=electronicsrot&f=ifr" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+
+</div>
+ <div id="spot-area">
+	 	<!--
+     <p><a id="spot-href" href="#" target="_blank"><span id="spot-artists"></span><span id="spot-song"></span></a></p>
+     <p><a target="_blank" href="/spotify/playlist/8p37l8di1amavaq.txt">Listen to this power hour in Spotify</a></p>
+	 -->
+
+	 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	 <!-- Ad2 -->
+	 <ins class="adsbygoogle"
+	      style="display:inline-block;width:300px;height:250px"
+	      data-ad-client="ca-pub-7151771021956845"
+	      data-ad-slot="8977521810"></ins>
+	 <script>
+	 (adsbygoogle = window.adsbygoogle || []).push({});
+	 </script>
+ </div>
+<div class="clearfix"></div>
+<div id="video-nav">
+	<p id="nav-title">&nbsp;</p>
+	<p id="now-playing">
+		<img width="120" height="90" src="http://img.youtube.com/vi/5yt849wJyVk/1.jpg" />
+	</p>
+	<div id="nav-area">
+
+
+		<ul id="horiz_container_outer">
+			<li id="horiz_container_inner">
+				<ul id="horiz_container">
+				</ul>
+			</li>
+		</ul>
+
+		<div id="scrollbar">
+			<a id="left_scroll" class="mouseover_left" href="#"></a>
+			<div id="track">
+			     <div id="dragBar"></div>
+			</div>
+			<a id="right_scroll" class="mouseover_right" href="#"></a>
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div id="my-meta">
+
+	<div id="like">
+		<div class="fb-like" data-href="http://www.mytube60.com/video/on/ragefest/8p37l8di1amavaq.html" data-send="false" data-width="450" data-show-faces="true" data-colorscheme="dark"></div>
+		<div class="clearfix"></div>
+		<div class="tweet-btn">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.mytube60.com/video/on/ragefest/8p37l8di1amavaq.html">Tweet</a>
+		</div>
+	</div>
+	<div id="qual">
+		Video Quality:
+		<select id="vquality">
+			<option value="default">Auto</option>
+			<option value="medium">Small</option>
+			<option value="large">Medium</option>
+			<option value="hd720">Large</option>
+		</select>
+	</div>
+	<div class="clearfix"></div>
+</div>
+<noscript>
+    <p>This video contains the following videos.</p>
+    <ul>
+    
+        <li>Ludacris - Get Back</li>
+    
+        <li>Flo Rida - Good Feeling [Official Video]</li>
+    
+        <li>Jay-Z & Kanye West - Ni**as In Paris (Explicit)</li>
+    
+        <li>Sisqo - Thong Song</li>
+    
+        <li>First Of The Year (Equinox) - Skrillex [OFFICIAL]</li>
+    
+        <li>Martin Solveig & Dragonette - Hello [OFFICIAL VIDEO HD]</li>
+    
+        <li>Paramore: Misery Business [OFFICIAL VIDEO]</li>
+    
+        <li>The White Stripes - Icky Thump</li>
+    
+        <li>MATT AND KIM - "LESSONS LEARNED" (OFFICIAL MUSIC VIDEO)</li>
+    
+        <li>Mike Jones - Mr. Jones [OFFICIAL VIDEO]</li>
+    
+        <li>MACKLEMORE & RYAN LEWIS - THRIFT SHOP FEAT. WANZ (OFFICIAL VIDEO)</li>
+    
+        <li>(If You're Wondering If I Want You To) I Want You To</li>
+    
+        <li>OutKast - BOB</li>
+    
+        <li>Rick Ross - Hustlin'</li>
+    
+        <li>Smash Mouth - All Star</li>
+    
+        <li>Sleigh Bells - Infinity Guitars</li>
+    
+        <li>AWOLNATION - Kill Your Heroes (Official)</li>
+    
+        <li>Phoenix - Lisztomania Official Video (Best Quality + Lyrics)</li>
+    
+        <li>Fatboy Slim - Weapon Of Choice [Official video]</li>
+    
+        <li>Passion Pit - Sleepyhead</li>
+    
+        <li>Enter Sandman - Metallica</li>
+    
+        <li>The Strokes - Last Nite</li>
+    
+        <li>Kanye West - Stronger</li>
+    
+        <li>Lenny Kravitz - Fly Away</li>
+    
+        <li>Nirvana - Smells Like Teen Spirit</li>
+    
+        <li>'WHIRRING' THE JOY FORMIDABLE [OFFICIAL VIDEO]</li>
+    
+        <li>Arctic Monkeys - I Bet You Look Good On The Dance Floor (2005)</li>
+    
+        <li>LMFAO - Shots ft. Lil Jon</li>
+    
+        <li>Childish Gambino - Bonfire</li>
+    
+        <li>DMX - Ruff Ryders' Anthem</li>
+    
+        <li>Weezer - Pork And Beans</li>
+    
+        <li>OK Go - Here It Goes Again</li>
+    
+        <li>NWA - Straight Outta Compton [Explicit] [HD]</li>
+    
+        <li>3OH!3 - DON'T TRUST ME [OFFICIAL MUSIC VIDEO]</li>
+    
+        <li>Snoop Dogg & Wiz Khalifa - Young, Wild and Free ft. Bruno Mars [Official Video]</li>
+    
+        <li>Lupe Fiasco - The Show Goes On</li>
+    
+        <li>I'm On A Boat (Explicit Version)</li>
+    
+        <li>Flobots - Handlebars</li>
+    
+        <li>Wildlife Control - Analog or Digital</li>
+    
+        <li>Foo Fighters - The Pretender</li>
+    
+        <li>Daft Punk - Derezzed (from TRON: Legacy)</li>
+    
+        <li>Beastie Boys - Sabotage</li>
+    
+        <li>Nero - Promises</li>
+    
+        <li>Goldfinger - Superman</li>
+    
+        <li>The Naked And Famous - Young Blood</li>
+    
+        <li>Flo Rida - Club Can't Handle Me ft. David Guetta [Official Music Video] - Step Up 3D</li>
+    
+        <li>M83 'Midnight City' Official video</li>
+    
+        <li>BoB - Haterz Everywhere [Feat. Rich Boy] (video)</li>
+    
+        <li>Earl Sweatshirt - EARL</li>
+    
+        <li>Calvin Harris - Sweet Nothing ft. Florence Welch</li>
+    
+        <li>Cali Swag District - Teach Me How To Dougie (Official Video)</li>
+    
+        <li>The Black Keys - Lonely Boy (First Listen)</li>
+    
+        <li>Neon Trees - Everybody Talks</li>
+    
+        <li>Carly Rae Jepsen - Call Me Maybe</li>
+    
+        <li>GROUPLOVE 'Colours' [OFFICIAL VIDEO]</li>
+    
+        <li>Justice - DANCE (Official Video)</li>
+    
+        <li>Cee Lo Green - FUCK YOU (Official Video)</li>
+    
+        <li>Queen - 'We Are The Champions'</li>
+    
+    </ul>
+</noscript>
+</div>
+			</div>
+			<div id="foot">
+				Copyright &copy; 2016 MyTube60 <a href="/contact.html">Contact</a>
+			</div>
+		</div>
+
+		<a style="display:none;" id="lightBoxImage" href="/public/images/lightbox1.png"></a>
+
+		
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=116166465077543";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-30527380-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+	</body>
+</html>
+
